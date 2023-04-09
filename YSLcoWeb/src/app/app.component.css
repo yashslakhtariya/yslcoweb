@@ -84,16 +84,29 @@
      position: relative;
      resize: none; /* Disable manual resizing of textarea */
      overflow: auto; /* Hide any overflowing text */
-     height: auto; /* Set initial height to auto */
-     min-height: 50px; /* Set minimum height */
+     height: 350px; /* Set initial height to auto */
+     /* min-height: 50px; Set minimum height */
      max-height: 350px; /* Set maximum height */
      width: 100%;
      border: none;  
      background-color: #5e81cc;
      color: #d8dee9;
-     border-radius: 20px;
+     border-radius: 12px;
      padding: 15px;
      margin: auto;
+}
+::-webkit-scrollbar{
+     width: 9px;
+     margin-top: 10px;
+}
+::-webkit-scrollbar-track{
+     border-radius: 100px;
+     border-right: 100px;
+     background-color: #a347ba;
+}
+::-webkit-scrollbar-thumb{
+     border-radius: 100px;
+     background-color: #d18677;
 }
 .outputbox{
      position: relative;
