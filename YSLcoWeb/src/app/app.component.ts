@@ -24,4 +24,28 @@ export class AppComponent {
       this.darkmode = false;
     }
   }
+  google()
+  {
+    window.open(`https://www.google.com/search?q=${this.srchtxt}`);
+  }
+  youtube()
+  {
+    window.open(`https://www.youtube.com/results?search_query=${this.srchtxt}`);
+  }
+  brave()
+  {
+    window.open(`https://search.brave.com/search?q=${this.srchtxt}`);
+  }
+  duckduckgo()
+  {
+    window.open(`https://duckduckgo.com/?q=${this.srchtxt}`);
+  }
+  yahoo()
+  {
+    window.open(`https://search.yahoo.com/search?p=${this.srchtxt}`);
+  }
+  bing()
+  {
+    window.open(`https://www.bing.com/search?q=${this.srchtxt}`);
+  }
 }
