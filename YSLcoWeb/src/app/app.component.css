@@ -17,7 +17,6 @@
 .header .icons{
      float: right; 
 }
- 
 .header .button{
      margin: 5px;
      border: none;
@@ -44,9 +43,8 @@
      border: none;
      border-radius: 100px;
      width: 60%;
-     font-size: 2.0rem;
-     padding: 10px;
-     /* margin-left: 10%; */
+     font-size: 1.4rem;
+     padding: 16px;
 }
  
 .search .button2{
@@ -82,13 +80,15 @@
      background-color: #d18677; 
 }
  
-textarea {
+.outputtext {
+     position: relative;
      resize: none; /* Disable manual resizing of textarea */
-     overflow: hidden; /* Hide any overflowing text */
+     overflow: auto; /* Hide any overflowing text */
      height: auto; /* Set initial height to auto */
      min-height: 50px; /* Set minimum height */
-     max-height: 200px; /* Set maximum height */
+     max-height: 350px; /* Set maximum height */
      width: 100%;
+     border: none;  
      background-color: #5e81cc;
      color: #d8dee9;
      border-radius: 20px;
@@ -96,6 +96,7 @@ textarea {
      margin: auto;
 }
 .outputbox{
+     position: relative;
      text-align: center;
      align-self: center;
      margin-left: 40px;
