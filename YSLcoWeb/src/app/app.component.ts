@@ -1,22 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OpenaiService } from './openai.service';
+import { PdfExportService } from './pdf-export.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'YSLcoWeb';
   srchtxt: string = '';
   mainbg = '';
   darkmode = false;
+  exportprmpt = '\n\nPress export button at top right to export output as pdf!'
+  exprt = false;
   flag = false;
   regex = /^[^\w]*$/;
   init: string = '\nHey there! I am YSLcoWeb, your Web Assistant. You can search through specific search engines given\
  or you can type your query and press enter button for intelligent AI answers\nYou can also ask me some basic questions.\
- Ask me to check your device info, browser info, compatibility, privacy and security.';
-  outputtxt: string | undefined = this.init;
+ Ask me to check your device info, browser info, compatibility, privacy and security. You can export pdf of your output text also when top right\
+ button for the same is visible';
+  outputtxt: string = this.init;
+
+  ngOnInit(): void {
+    if(this.sysdarkmode())
+    {
+      this.mainbg = 'background-color : #313744';
+      this.darkmode = true;
+    }
+    else
+    {
+      this.mainbg = 'background-color : #d8e1f2';
+      this.darkmode = false;
+    }
+  }
+  sysdarkmode()
+  {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
   changebg()
   {
     if(!this.darkmode)
@@ -26,24 +47,24 @@ export class AppComponent {
     }
     else if(this.darkmode)
     {
-      this.mainbg = 'background-color : #d8dee9';
+      this.mainbg = 'background-color : #d8e1f2';
       this.darkmode = false;
     }
   }
-  constructor(private openaiService: OpenaiService) {}
-
-  inittxt()
+  constructor(private openaiService: OpenaiService, private pdfExportService: PdfExportService) {}
+  exportPdf() {
+    let textToExport: string = this.outputtxt;
+    const fileName = 'yslcoweb';
+    this.pdfExportService.exportTextAsPdf(textToExport, fileName);
+  }
+  initstate()
   {
-    this.outputtxt = this.init;
+    this.flag = false;
+    this.exprt = false;
   }
 
   enter(data: string)
   {
-    let w = ['check', 'browser', 'security'];
-    let w1 = ['check', 'device', 'info'];
-    let w2 = ['check', 'browser', 'compatibility'];
-    let w3 = ['check', 'browser', 'privacy'];
-    console.log(this.regex.test(data));
     if((data.includes('check') && data.includes('browser') && data.includes('security')) || (data.includes('check') && data.includes('browser') && data.includes('privacy')))
     {
       this.security();
@@ -67,9 +88,13 @@ export class AppComponent {
   }
 
   generateText(data:string) {
+    this.flag = true;
     this.outputtxt = '\nPlease wait for a while!'
     this.openaiService.generateText(data).then(text => {
-      this.outputtxt = text;
+      this.outputtxt = text + '';
+      this.exprt = true;
+    }).catch(error => {
+      this.outputtxt = error;
     })
   }
   google()

@@ -16,6 +16,11 @@
                menu
           </span>
           </button>
+          <button *ngIf="exprt" class="button" (click)="exportPdf()">
+          <span class="material-symbols-outlined">
+               settings
+          </span>
+          </button>
      </div>
 </div>
 <br><br><br><br><br><br>
@@ -23,7 +28,7 @@
      <div class="logo"><img src="assets/coweb.png"></div>
      <div class="search">
           <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-          <input class="srch" type="text" [(ngModel)]="srchtxt" (submit)="enter(srchtxt)" (keypress)="inittxt()"><button class="button2" (click)="enter(srchtxt)"><span class="material-symbols-outlined">start</span></button>
+          <input class="srch" type="text" [(ngModel)]="srchtxt" (submit)="enter(srchtxt)" (keypress)="initstate()" placeholder="Enter your search text here"><button class="button2" (click)="enter(srchtxt)"><span class="material-symbols-outlined">start</span></button>
      </div>
 </div>
 <br><br>
@@ -45,7 +50,9 @@
      <button class="button3"><img src="assets/duckgo.png" (click)="duckduckgo()"></button>
 </div>
 <br><br><br>
-<div class="outputbox">
-     <textarea class="outputtext" #textbox [(ngModel)]="outputtxt" [ngStyle]="{'height': textbox.scrollHeight + 'px'}"></textarea>
+<div class="outputbox" *ngIf="flag">
+     <textarea class="outputtext" #textbox [(ngModel)]="outputtxt + exportprmpt" [ngStyle]="{'height': textbox.scrollHeight + 'px'}">
+          <!-- {{exportprmpt}} -->
+     </textarea>
 </div>
 </div>

@@ -4,8 +4,8 @@
      padding: 0;
      width: 100vw;
      height: 100vh;
-     background-color: #d8dee9;
-     transition: background-color 1.3s ease;
+     background-color: #d8e1f2;
+     transition: background-color 1.3s ease-in-out;
      align-items: center;
      justify-content: center;
  }
@@ -57,13 +57,18 @@
 .search .srch{
      height: 8%;
      background-color: #5e81cc;
-     color: #d8dee9;
+     color: #d8e1f2;
      border: none;
      border-radius: 100px;
      width: 60%;
      font-size: 1.4rem;
      font-family: 'Ubuntu';
      padding: 16px;
+}
+
+.search .srch::placeholder
+{
+     color: #d8e1f2;
 }
  
 .search .button2{
@@ -134,7 +139,7 @@
      width: 100%;
      border: none;  
      background-color: #5e81cc;
-     color: #d8dee9;
+     color: #d8e1f2;
      border-radius: 12px;
      padding: 15px;
      margin: auto;
