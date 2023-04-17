@@ -23,7 +23,7 @@
      <div class="logo"><img src="assets/cowbot_v4_logo.png"></div>
      <div class="search">
           <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-          <input class="srch" type="text" [(ngModel)]="srchtxt"><button class="button2"><span class="material-symbols-outlined">start</span></button>
+          <input class="srch" type="text" [(ngModel)]="srchtxt"><button class="button2" (click)="generateText(srchtxt)"><span class="material-symbols-outlined">start</span></button>
      </div>
 </div>
 <br><br>

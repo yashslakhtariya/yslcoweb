@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OpenaiService } from './openai.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
   srchtxt: string = '';
   mainbg = '';
   darkmode = false;
-  outputtxt: string = 'uqeuueqb\nqbbbb\nqenenqern\nqernqnr\qnenrqnne\nqenqrenrqeneqn\nqeenqernqen';
+  outputtxt: string | undefined = 'uqeuueqb\nqbbbb\nqenenqern\nqernqnr\qnenrqnne\nqenqrenrqeneqn\nqeenqernqen';
   changebg()
   {
     if(!this.darkmode)
@@ -23,6 +24,16 @@ export class AppComponent {
       this.mainbg = 'background-color : #d8dee9';
       this.darkmode = false;
     }
+  }
+  textList:textResponse[]=[{sno:1,text:'',response:''}];
+
+  constructor(private openaiService: OpenaiService) {}
+
+  generateText(data:string) {
+    this.outputtxt = '\n\tYour answer is on the way!'
+    this.openaiService.generateText(data).then(text => {
+      this.outputtxt = text;
+    })
   }
   google()
   {
@@ -48,4 +59,22 @@ export class AppComponent {
   {
     window.open(`https://www.bing.com/search?q=${this.srchtxt}`);
   }
+  security()
+  {
+    window.open('https://browserleaks.com');
+  }
+  deviceinfo()
+  {
+    window.open('https://deviceinfo.me');
+  }
+  compatibility()
+  {
+    window.open('https://html5test.com');
+  }
+}
+
+export class textResponse{
+  sno:number=1;
+  text:string='';
+  response:any='';
 }
