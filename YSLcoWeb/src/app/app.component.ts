@@ -15,7 +15,7 @@ export class AppComponent {
   regex = /^[^\w]*$/;
   init: string = '\nHey there! I am YSLcoWeb, your Web Assistant. You can search through specific search engines given\
  or you can type your query and press enter button for intelligent AI answers\nYou can also ask me some basic questions.\
- Ask me to check your device info, browser info, compatibility, privacy and security';
+ Ask me to check your device info, browser info, compatibility, privacy and security.';
   outputtxt: string | undefined = this.init;
   changebg()
   {
