@@ -5,14 +5,22 @@
      width: 100vw;
      height: 100vh;
      background-color: #d8dee9;
+     transition: background-color 1.3s ease;
      align-items: center;
      justify-content: center;
+ }
+ .header
+ {
+     margin-left: 1%;
+     margin-top: 1%;
+     margin-right: 1%;
  }
 .header .name{
      float: left;
      color: #d18677; 
      font-size: 2.5rem;
-     font-family: 'Oswald', sans-serif;
+     font-family: 'Ubuntu';
+     font-weight: bold;
 }
 .header .icons{
      float: right; 
@@ -23,6 +31,16 @@
      padding: 10px;
      border-radius: 50%;
      background-color: #d18677;
+}
+
+.header .button:hover
+{
+     background-color: #eaca8a;
+}
+
+.header .button:active
+{
+     background-color: #bf616c;
 }
  
 .logo{
@@ -44,6 +62,7 @@
      border-radius: 100px;
      width: 60%;
      font-size: 1.4rem;
+     font-family: 'Ubuntu';
      padding: 16px;
 }
  
@@ -52,7 +71,17 @@
      margin-left: 10px;
      padding: 10px;
      border: none;
-     background-color: #bf616c;
+     background-color: #b75969;
+}
+
+.search .button2:hover
+{
+     background-color: #eaca8a;
+}
+
+.search .button2:active
+{
+     background-color: #d18677;
 }
 
 .search{
@@ -79,9 +108,24 @@
      border-radius: 100%;
      background-color: #d18677; 
 }
+
+.button3:hover
+{
+     background-color: #eaca8a;
+}
+
+.button3:active
+{
+     background-color: #bf616c;
+}
  
 .outputtext {
+     font-family: 'Ubuntu';
      position: relative;
+     font-size: large;
+     font-weight: bold;
+     text-align: center;
+     line-height: 1.6;
      resize: none; /* Disable manual resizing of textarea */
      overflow: auto; /* Hide any overflowing text */
      height: 350px; /* Set initial height to auto */

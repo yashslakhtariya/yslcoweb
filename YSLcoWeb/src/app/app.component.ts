@@ -11,7 +11,12 @@ export class AppComponent {
   srchtxt: string = '';
   mainbg = '';
   darkmode = false;
-  outputtxt: string | undefined = 'uqeuueqb\nqbbbb\nqenenqern\nqernqnr\qnenrqnne\nqenqrenrqeneqn\nqeenqernqen';
+  flag = false;
+  regex = /^[^\w]*$/;
+  init: string = '\nHey there! I am YSLcoWeb, your Web Assistant. You can search through specific search engines given\
+ or you can type your query and press enter button for intelligent AI answers\nYou can also ask me some basic questions.\
+ Ask me to check your device info, browser info, compatibility, privacy and security';
+  outputtxt: string | undefined = this.init;
   changebg()
   {
     if(!this.darkmode)
@@ -25,12 +30,39 @@ export class AppComponent {
       this.darkmode = false;
     }
   }
-  textList:textResponse[]=[{sno:1,text:'',response:''}];
-
   constructor(private openaiService: OpenaiService) {}
 
+  enter(data: string)
+  {
+    let w = ['check', 'browser', 'security'];
+    let w1 = ['check', 'device', 'info'];
+    let w2 = ['check', 'browser', 'compatibility'];
+    let w3 = ['check', 'browser', 'privacy'];
+    console.log(this.regex.test(data));
+    if((data.includes('check') && data.includes('browser') && data.includes('security')) || (data.includes('check') && data.includes('browser') && data.includes('privacy')))
+    {
+      this.security();
+    }
+    else if(data.includes('check') && data.includes('device') && data.includes('info'))
+    {
+      this.deviceinfo();
+    }
+    else if(data.includes('check') && data.includes('browser') && data.includes('compatibility'))
+    {
+      this.compatibility();
+    }
+    else if(this.regex.test(data))
+    {
+      this.outputtxt = this.init;
+    }
+    else
+    {
+      this.generateText(data);
+    }
+  }
+
   generateText(data:string) {
-    this.outputtxt = '\n\tYour answer is on the way!'
+    this.outputtxt = '\nPlease wait for a while!'
     this.openaiService.generateText(data).then(text => {
       this.outputtxt = text;
     })
@@ -71,10 +103,4 @@ export class AppComponent {
   {
     window.open('https://html5test.com');
   }
-}
-
-export class textResponse{
-  sno:number=1;
-  text:string='';
-  response:any='';
 }
