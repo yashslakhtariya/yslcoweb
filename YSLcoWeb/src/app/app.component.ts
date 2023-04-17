@@ -32,6 +32,11 @@ export class AppComponent {
   }
   constructor(private openaiService: OpenaiService) {}
 
+  inittxt()
+  {
+    this.outputtxt = this.init;
+  }
+
   enter(data: string)
   {
     let w = ['check', 'browser', 'security'];

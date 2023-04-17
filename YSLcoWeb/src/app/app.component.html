@@ -23,7 +23,7 @@
      <div class="logo"><img src="assets/coweb.png"></div>
      <div class="search">
           <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-          <input class="srch" type="text" [(ngModel)]="srchtxt" (submit)="enter(srchtxt)"><button class="button2" (click)="enter(srchtxt)"><span class="material-symbols-outlined">start</span></button>
+          <input class="srch" type="text" [(ngModel)]="srchtxt" (submit)="enter(srchtxt)" (keypress)="inittxt()"><button class="button2" (click)="enter(srchtxt)"><span class="material-symbols-outlined">start</span></button>
      </div>
 </div>
 <br><br>
