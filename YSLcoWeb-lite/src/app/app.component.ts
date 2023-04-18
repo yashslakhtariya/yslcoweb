@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
   }
   about()
   {
-    window.open('https://github.com/yslcoweb/yslcoweb.github.io/blob/main/README.md');
+    window.open('https://www.instagram.com/soul4krishna');
   }
   changebg()
   {
