@@ -1,0 +1,45 @@
+<div class="mainpage" [style]="mainbg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+  <div class="header">
+       <div class="name">YSLcoWeb</div>
+       <div class="icons">
+            <button class="button" (click)="changebg()">
+            <span class="material-symbols-outlined">
+            dark_mode
+            </span>
+            </button>
+            <button class="button" (click)="about()">
+            <span class="material-symbols-outlined">
+                 menu
+            </span>
+            </button>
+       </div>
+  </div>
+  <br><br><br><br><br><br>
+  <div class="srchbox">
+       <div class="logo"><img src="assets/coweb.png"></div>
+       <div class="search">
+            <input class="srch" type="text" [(ngModel)]="srchtxt" placeholder="Enter your search text here">
+            <button class="button2" (click)="enter(srchtxt)"><span class="material-symbols-outlined">start</span></button>
+       </div>
+  </div>
+  <br><br>
+  <div class="icons2">
+       <button class="button3"><img src="assets/google.png" (click)="google()"></button>
+       &nbsp;&nbsp;
+       <button class="button3"><img src="assets/bing.png" (click)="bing()"></button>
+       &nbsp;&nbsp;
+       <button class="button3"><img src="assets/yahoo.png" (click)="yahoo()"></button>
+       &nbsp;&nbsp;
+       <button class="button3"><img src="assets/youtube.png" (click)="youtube()"></button>
+       &nbsp;&nbsp;
+       <button class="button3"><img src="assets/brave.png" (click)="brave()"></button>
+       &nbsp;&nbsp;
+       <button class="button3"><img src="assets/duckgo.png" (click)="duckduckgo()"></button>
+  </div>
+  <br><br><br>
+  </div>

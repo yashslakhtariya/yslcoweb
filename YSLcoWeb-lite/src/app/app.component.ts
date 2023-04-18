@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OpenaiService } from './openai.service';
-import { PdfExportService } from './pdf-export.service';
 
 @Component({
   selector: 'app-root',
@@ -12,16 +10,6 @@ export class AppComponent implements OnInit{
   srchtxt: string = '';
   mainbg = '';
   darkmode = false;
-  exportprmpt = '\n\nPress export button at top right to export output as pdf!'
-  exprt = false;
-  flag = false;
-  regex = /^[^\w]*$/;
-  init: string = '';
-//   init: string = '\nHey there! I am YSLcoWeb, your Web Assistant. You can search through specific search engines given\
-//  or you can type your query and press enter button for intelligent AI answers\nYou can also ask me some basic questions.\
-//  Ask me to check your device info, browser info, compatibility, privacy and security. You can export pdf of your output text also when top right\
-//  button for the same is visible';
-  outputtxt: string = this.init;
 
   ngOnInit(): void {
     if(this.sysdarkmode())
@@ -56,17 +44,7 @@ export class AppComponent implements OnInit{
       this.darkmode = false;
     }
   }
-  constructor(private openaiService: OpenaiService, private pdfExportService: PdfExportService) {}
-  exportPdf() {
-    let textToExport: string = this.outputtxt;
-    const fileName = 'yslcoweb';
-    this.pdfExportService.exportTextAsPdf(textToExport, fileName);
-  }
-  initstate()
-  {
-    this.flag = false;
-    this.exprt = false;
-  }
+  constructor() {}
 
   enter(data: string)
   {
@@ -82,25 +60,6 @@ export class AppComponent implements OnInit{
     {
       this.compatibility();
     }
-    else if(this.regex.test(data))
-    {
-      this.outputtxt = this.init;
-    }
-    else
-    {
-      this.generateText(data);
-    }
-  }
-
-  generateText(data:string) {
-    this.flag = true;
-    this.outputtxt = '\nPlease wait for a while!'
-    this.openaiService.generateText(data).then(text => {
-      this.outputtxt = text + '';
-      this.exprt = true;
-    }).catch(error => {
-      this.outputtxt = error;
-    })
   }
   google()
   {

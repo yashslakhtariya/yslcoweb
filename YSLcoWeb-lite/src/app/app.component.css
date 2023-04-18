@@ -1,0 +1,132 @@
+.mainpage{
+     position: absolute;
+     margin: 0;
+     padding: 0;
+     width: 100vw;
+     height: 100vh;
+     background-color: #d8e1f2;
+     transition: background-color 1.3s ease-in-out;
+     align-items: center;
+     justify-content: center;
+}
+ .header
+{
+     margin-left: 1%;
+     margin-top: 1%;
+     margin-right: 1%;
+}
+.header .name{
+     float: left;
+     color: #d18677; 
+     font-size: 2rem;
+     font-family: 'Ubuntu';
+     font-weight: bold;
+}
+.header .icons{
+     float: right; 
+}
+.header .button{
+     margin: 5px;
+     border: none;
+     padding: 10px;
+     border-radius: 50%;
+     background-color: #d18677;
+}
+
+.header .button:hover
+{
+     background-color: #eaca8a;
+}
+
+.header .button:active
+{
+     background-color: #bf616c;
+}
+ 
+.logo{
+     margin-left: 37%;
+     margin-right: 37%;
+}
+ 
+.logo img{
+     height:8rem;
+     object-fit:cover;
+     margin:1rem 0;
+}
+
+.search{
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+}
+
+.search > *{
+     margin: auto;
+}
+
+.search .srch{
+     margin: auto;
+     height: 10%;
+     background-color: #5e81cc;
+     color: #d8e1f2;
+     border: none;
+     border-radius: 100px;
+     width: 80%;
+     font-size: 1.3rem;
+     font-family: 'Ubuntu';
+     padding: 12px;
+}
+
+.search .srch::placeholder
+{
+     color: #d8e1f2;
+}
+ 
+.search .button2{
+     border-radius: 100%;
+     margin-left: 10px;
+     padding: 10px;
+     border: none;
+     background-color: #b75969;
+}
+
+.search .button2:hover
+{
+     background-color: #eaca8a;
+}
+
+.search .button2:active
+{
+     background-color: #d18677;
+}
+
+.srchbox{
+     text-align: center;
+     margin: auto;
+     width: 60%;
+}
+ 
+.icons2{
+     margin: auto;
+     width: 50%;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+}
+ 
+.button3{
+     border: none;
+     padding: 8px;
+     border-radius: 100%;
+     background-color: #d18677; 
+}
+
+.button3:hover
+{
+     background-color: #eaca8a;
+}
+
+.button3:active
+{
+     background-color: #bf616c;
+}
