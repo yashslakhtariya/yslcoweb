@@ -13,4 +13,8 @@ Features :
 - Export pdf of respons (icon visible on top right after response is generated
 - Adapt your system light/dark mode with YSLcoWeb
 
+## Try our YSLcoWeb-lite extension for chrome and all chromium based browsers
+ 
+- Enable Developer Mode in `` chrome://extensions `` and drag and drop the ```yslcoweb.crx``` file to install. It has similar features except AI responses.
+
 ### Contact us for feedback/queries : yslcoweb@gmail.com
