@@ -12,7 +12,7 @@
           dark_mode
           </span>
           </button>
-          <button class="button" (click)="about()">
+          <button class="button" (click)="help()">
           <span class="material-symbols-outlined">
                menu
           </span>
@@ -51,7 +51,7 @@
      <button class="button3"><img src="assets/duckgo.png" (click)="duckduckgo()"></button>
 </div>
 <br><br><br>
-<div class="outputbox" *ngIf="flag">
+<div *ngIf="flag" class="outputbox">
      <textarea class="outputtext" #textbox [(ngModel)]="outputtxt + exportprmpt" [ngStyle]="{'height': textbox.scrollHeight + 'px'}">
           <!-- {{exportprmpt}} -->
      </textarea>

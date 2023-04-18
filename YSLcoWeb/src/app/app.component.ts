@@ -12,11 +12,20 @@ export class AppComponent implements OnInit{
   srchtxt: string = '';
   mainbg = '';
   darkmode = false;
-  exportprmpt = '\n\nPress export button at top right to export output as pdf!'
+  exportprmpt = '\n\nPress export button at top right to export output as pdf!';
   exprt = false;
   flag = false;
   regex = /^[^\w]*$/;
   init: string = '';
+  helpstr: string = 'Web assitant for you and your browser, co-Web or Cow-eb by YSL\n\n- Search the same text on different popular search engines which increases productivity\
+  \n- Search on Google for personalized results, bing for better image results, brave for unbiased results, duckduckgo for privacy, etc.\
+  \n- Search the same query on YouTube simultaneouly along with search engines\
+  \n- Ask to check your browser compatibility, privacy and security\
+  \n- Ask to check your device info\
+  \n- Enter query and press enter to get AI intelligent responses\
+  \n- Export pdf of respons (icon visible on top right after response is generated\
+  \n- Adapt your system light/dark mode with YSLcoWeb\n\nContact us for feedback/queries : yslcoweb@gmail.com';
+
 //   init: string = '\nHey there! I am YSLcoWeb, your Web Assistant. You can search through specific search engines given\
 //  or you can type your query and press enter button for intelligent AI answers\nYou can also ask me some basic questions.\
 //  Ask me to check your device info, browser info, compatibility, privacy and security. You can export pdf of your output text also when top right\
@@ -38,10 +47,6 @@ export class AppComponent implements OnInit{
   sysdarkmode()
   {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  about()
-  {
-    window.open('https://github.com/yslcoweb/yslcoweb.github.io/blob/main/README.md');
   }
   changebg()
   {
@@ -66,6 +71,23 @@ export class AppComponent implements OnInit{
   {
     this.flag = false;
     this.exprt = false;
+  }
+  help()
+  {
+    if(this.outputtxt != this.helpstr)
+    {
+      this.outputtxt = this.helpstr;
+      this.exportprmpt = '';
+      this.flag = true;
+      this.exprt = false;
+    }
+    else
+    {
+      this.outputtxt = this.init;
+      this.exportprmpt = '\n\nPress export button at top right to export output as pdf!'
+      this.flag = false;
+      this.exprt = false;
+    }
   }
 
   enter(data: string)
