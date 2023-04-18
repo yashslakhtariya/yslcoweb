@@ -16,10 +16,11 @@ export class AppComponent implements OnInit{
   exprt = false;
   flag = false;
   regex = /^[^\w]*$/;
-  init: string = '\nHey there! I am YSLcoWeb, your Web Assistant. You can search through specific search engines given\
- or you can type your query and press enter button for intelligent AI answers\nYou can also ask me some basic questions.\
- Ask me to check your device info, browser info, compatibility, privacy and security. You can export pdf of your output text also when top right\
- button for the same is visible';
+  init: string = '';
+//   init: string = '\nHey there! I am YSLcoWeb, your Web Assistant. You can search through specific search engines given\
+//  or you can type your query and press enter button for intelligent AI answers\nYou can also ask me some basic questions.\
+//  Ask me to check your device info, browser info, compatibility, privacy and security. You can export pdf of your output text also when top right\
+//  button for the same is visible';
   outputtxt: string = this.init;
 
   ngOnInit(): void {
@@ -37,6 +38,10 @@ export class AppComponent implements OnInit{
   sysdarkmode()
   {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  about()
+  {
+    window.open('https://github.com/yslcoweb/yslcoweb.github.io/blob/main/README.md');
   }
   changebg()
   {
