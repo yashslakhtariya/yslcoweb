@@ -84,7 +84,7 @@ export class AppComponent implements OnInit{
     else
     {
       this.outputtxt = this.init;
-      this.exportprmpt = '\n\nPress export button at top right to export output as pdf!'
+      this.exportprmpt = '\n\nPress export button at top right to export output as pdf!';
       this.flag = false;
       this.exprt = false;
     }

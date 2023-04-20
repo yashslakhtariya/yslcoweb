@@ -1,4 +1,5 @@
 .mainpage{
+     overflow: auto;
      position: absolute;
      margin: 0;
      padding: 0;
@@ -133,9 +134,9 @@
      line-height: 1.6;
      resize: none; /* Disable manual resizing of textarea */
      overflow: auto; /* Hide any overflowing text */
-     height: 350px; /* Set initial height to auto */
-     /* min-height: 50px; Set minimum height */
-     max-height: 350px; /* Set maximum height */
+     height: 350px;
+     /* min-height: 50px; */
+     max-height: 350px; 
      width: 100%;
      border: none;  
      background-color: #5e81cc;
