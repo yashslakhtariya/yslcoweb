@@ -10,7 +10,7 @@ Features :
 - Ask to check your browser compatibility, privacy and security
 - Ask to check your device info
 - Enter query and press enter to get AI intelligent responses
-- Export pdf of respons (icon visible on top right after response is generated
+- Export pdf of responses (icon visible on top right after response is generated
 - Adapt your system light/dark mode with YSLcoWeb
 
 ## Try our YSLcoWeb-lite extension for chrome and all chromium based browsers
