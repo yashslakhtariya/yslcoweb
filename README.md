@@ -15,6 +15,6 @@ Features :
 
 ## Try our YSLcoWeb-lite extension for chrome and all chromium based browsers
  
-- Enable Developer Mode in `` chrome://extensions `` and drag and drop the ```yslcoweb.crx``` file to install. It has similar features except AI responses.
+- Enable Developer Mode in `` chrome://extensions `` and drag and drop the ```yslcoweb.crx``` file to install. It has similar features except AI responses. You can also install via **Developer options > Load unpacked option** in ``chrome://extensions`` and selecting the folder **yslcoweb** in **chromium-extension** if above method not working.
 
 ### Contact us for feedback/queries : yslcoweb@gmail.com
