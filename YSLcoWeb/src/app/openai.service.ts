@@ -8,6 +8,8 @@ export class OpenaiService {
   private openai: OpenAIApi;
   configuration = new Configuration({
     apiKey: "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"
+    // api key expired because of leaking publicly after making gith repo private to public
+    // will update soon after making repo private again
   });
 
   constructor() {
